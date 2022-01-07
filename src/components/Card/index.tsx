@@ -1,3 +1,5 @@
+import { FaUserAlt } from "react-icons/fa";
+import "./styles.scss";
 interface User {
   name: string;
   age: number;
@@ -5,9 +7,15 @@ interface User {
 }
 
 export const Card = ({ name, age, hobby }: User) => (
-  <li>
-    <h3>{name}</h3>
-    <p>{age}</p>
-    <p>{hobby}</p>
+  <li className="Card">
+    <i>
+      <FaUserAlt />
+    </i>
+
+    <div>
+      <p>{name}</p>
+      <p>hobby: {hobby}</p>
+      <p>age: {age}</p>
+    </div>
   </li>
 );

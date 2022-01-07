@@ -1,0 +1,97 @@
+.App {
+  background-color: #39404e;
+  color: whitesmoke;
+  text-align: center;
+}
+
+header {
+  height: 3.75rem;
+
+  ul {
+    height: 3.75rem;
+    display: inline-flex;
+    align-items: center;
+
+    > li {
+      margin: 0 1rem;
+      font-size: 1.125;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.Main {
+  min-height: calc(100vh - 3.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  fieldset {
+    border: none;
+    padding: 1.5rem;
+    border-radius: 0.188rem;
+  }
+
+  fieldset > legend {
+    font-size: 1.375rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+  }
+
+  form {
+    min-width: 300px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    fieldset {
+      padding: 1.5rem;
+      border: 1px solid;
+      border-radius: 0.188rem;
+    }
+  }
+}
+
+input,
+button {
+  padding: 0.9rem;
+  border-radius: 0.188rem;
+  border: none;
+}
+
+button {
+  margin-top: 0.313rem;
+  width: 100%;
+  background-color: #61dafb;
+  transition: filter 0.1s linear;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+  }
+
+  &:active {
+    filter: brightness(0.8);
+  }
+}
+
+#Users {
+  min-height: 100vh;
+
+  > .NewUser {
+    min-height: 10rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  > .UsersList {
+    > ul {
+      padding: 1.5rem;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from "react";
+import "./styles.scss";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   placeholder: string;
