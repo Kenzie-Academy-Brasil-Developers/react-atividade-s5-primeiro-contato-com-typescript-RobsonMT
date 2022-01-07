@@ -4,15 +4,16 @@ interface ListProviderProps {
   children: ReactNode;
 }
 
-interface Person {
+interface User {
   name: string;
-  email: string;
+  hobby: string;
+  age: number;
 }
 
 interface ListProviderData {
-  list: Person[];
-  newPerson: Person;
-  createNewPerson: (person: Person) => void; //sem retorno explicito | nada
+  users: User[];
+  newUser: User;
+  createNewUser: (user: User) => void; //sem retorno explicito || nada
 }
 
 const ListContext = createContext<ListProviderData>({} as ListProviderData);
@@ -24,16 +25,16 @@ const useList = () => {
 };
 
 const ListProvider = ({ children }: ListProviderProps) => {
-  const [list, setList] = useState<Person[]>([]);
-  const [newPerson, setNewPerson] = useState({} as Person);
+  const [users, setUsers] = useState<User[]>([] as User[]);
+  const [newUser, setNewUser] = useState({} as User);
 
-  const createNewPerson = (person: Person) => {
-    setList((oldState) => [...oldState, person]);
-    setNewPerson(person);
+  const createNewUser = (user: User) => {
+    setUsers((oldState) => [...oldState, user]);
+    setNewUser(user);
   };
 
   return (
-    <ListContext.Provider value={{ createNewPerson, list, newPerson }}>
+    <ListContext.Provider value={{ createNewUser, users, newUser }}>
       {children}
     </ListContext.Provider>
   );
